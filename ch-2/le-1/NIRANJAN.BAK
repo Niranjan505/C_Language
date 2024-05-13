@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+
+main()
+{
+    clrscr();
+
+    printf("- - - - - - - - -\nI\t\t|\nR\t\t|\nN\t\t|\nW\t\t|\nI\t\t|\n- - - - - - - - - ");
+
+    getch();
+
+}
