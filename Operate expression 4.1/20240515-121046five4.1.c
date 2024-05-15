@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+ main() 
+ {
+    
+    int x, y, result;
+    clrscr();
+    
+    
+    x =10;
+    y =10;
+
+    
+    result = (x + y) * (x + y) * (x + y);
+
+    
+    printf("The result of (%d + %d)^3 is: %d\n", x, y, result);
+    getch();
+
+}
