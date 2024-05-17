@@ -10,7 +10,7 @@ main()
    {
     printf("This numbar is positive");
    }
-   else if(a=0)
+   else if(a==0)
    {
     printf("This numbar is nutaral");
    }
