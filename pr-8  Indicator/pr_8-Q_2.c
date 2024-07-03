@@ -29,7 +29,7 @@ void main()
         }
     }
     printf("\n\n");
-    scanf("arrayCube of Your Array is: \n");
+    printf("arrayCube of Your Array is: \n");
     for (int i = 0; i < a; i++)
     {
         for (int j = 0; j < a; j++)
