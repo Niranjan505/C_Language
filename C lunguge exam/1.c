@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() 
+void main() 
 {
     char a;
     printf("Enter 'n' to check a number or 'c' to check a character: ");
