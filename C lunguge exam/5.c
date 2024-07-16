@@ -34,7 +34,8 @@ void main()
     }
 
     printf("\nList of houses:\n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         printf("House %d:\n", i + 1);
         printf("  Room quantity: %d\n", houses[i].room_quantity);
         printf("  Established year: %d\n", houses[i].established_year);
