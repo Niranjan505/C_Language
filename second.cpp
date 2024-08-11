@@ -55,5 +55,4 @@ int main()
         cout << "Invalid choice!" << endl;
     }
 
-    return 0;
 }
