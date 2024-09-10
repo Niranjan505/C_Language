@@ -1,7 +1,7 @@
 #include <iostream>
-#include <cstring> // for strcpy, strcmp
+#include <cstring> 
 
-// Train Class
+
 class Train 
 {
     
@@ -14,8 +14,9 @@ private:
     static int trainCount;
 
 public:
-    // Default constructor
-    Train() : trainNumber(0) {
+    
+    Train() : trainNumber(0) 
+   {
         strcpy(trainName, "");
         strcpy(source, "");
         strcpy(destination, "");
@@ -23,9 +24,10 @@ public:
         trainCount++;
     }
 
-    // Parameterized constructor
+    
     Train(int number, const char* name, const char* src, const char* dest, const char* time) 
-    : trainNumber(number) {
+    : trainNumber(number) 
+   {
         strcpy(trainName, name);
         strcpy(source, src);
         strcpy(destination, dest);
@@ -33,12 +35,12 @@ public:
         trainCount++;
     }
 
-    // Destructor
+    
     ~Train() {
         trainCount--;
     }
 
-    // Getters and Setters
+    
     void setTrainNumber(int number) { trainNumber = number; }
     int getTrainNumber() const { return trainNumber; }
 
@@ -56,11 +58,12 @@ public:
 
     static int getTrainCount() { return trainCount; }
 
-    // Methods to input and display train details
-    void inputTrainDetails() {
+    
+    void inputTrainDetails() 
+   {
         std::cout << "Enter Train Number: ";
         std::cin >> trainNumber;
-        std::cin.ignore(); // Ignore newline after number input
+        std::cin.ignore(); 
 
         std::cout << "Enter Train Name: ";
         std::cin.getline(trainName, 50);
@@ -75,7 +78,8 @@ public:
         std::cin.getline(trainTime, 10);
     }
 
-    void displayTrainDetails() const {
+    void displayTrainDetails() const 
+   {
         std::cout << "Train Number: " << trainNumber << std::endl;
         std::cout << "Train Name: " << trainName << std::endl;
         std::cout << "Source: " << source << std::endl;
@@ -86,60 +90,71 @@ public:
 
 int Train::trainCount = 0;
 
-// RailwaySystem Class
-class RailwaySystem {
+
+class RailwaySystem 
+{
 private:
-    Train trains[100]; // Array to store train objects
-    int totalTrains;   // Total number of trains
+    Train trains[100]; 
+    int totalTrains;   
 
 public:
     RailwaySystem() : totalTrains(0) {}
 
-    void addTrain() {
-        if (totalTrains < 100) {
+    void addTrain() 
+   {
+        if (totalTrains < 100) 
+        {
             Train newTrain;
             newTrain.inputTrainDetails();
             trains[totalTrains++] = newTrain;
-        } else {
+        } else 
+        {
             std::cout << "Cannot add more trains. Capacity full." << std::endl;
         }
     }
 
-    void displayAllTrains() const {
-        if (totalTrains == 0) {
+    void displayAllTrains() const 
+   {
+        if (totalTrains == 0) 
+        {
             std::cout << "No train records to display." << std::endl;
             return;
         }
 
-        for (int i = 0; i < totalTrains; ++i) {
+        for (int i = 0; i < totalTrains; ++i) 
+        {
             std::cout << "Train " << (i + 1) << " details:" << std::endl;
             trains[i].displayTrainDetails();
             std::cout << std::endl;
         }
     }
 
-    void searchTrainByNumber(int number) const {
+    void searchTrainByNumber(int number) const 
+  {
         bool found = false;
-        for (int i = 0; i < totalTrains; ++i) {
-            if (trains[i].getTrainNumber() == number) {
+        for (int i = 0; i < totalTrains; ++i) 
+        {
+            if (trains[i].getTrainNumber() == number) 
+            {
                 std::cout << "Train details found:" << std::endl;
                 trains[i].displayTrainDetails();
                 found = true;
                 break;
             }
         }
-        if (!found) {
+        if (!found) 
+        {
             std::cout << "Train with number " << number << " not found!" << std::endl;
         }
     }
 };
 
-// Main Function
+
 int main() {
     RailwaySystem system;
     int choice;
 
-    // Add initial train records
+ 
     system.addTrain();
     system.addTrain();
     system.addTrain();
@@ -152,16 +167,18 @@ int main() {
         std::cout << "4. Exit" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
-        std::cin.ignore(); // Ignore newline after choice input
+        std::cin.ignore();
 
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
                 system.addTrain();
                 break;
             case 2:
                 system.displayAllTrains();
                 break;
-            case 3: {
+            case 3: 
+            {
                 int number;
                 std::cout << "Enter Train Number to search: ";
                 std::cin >> number;
@@ -177,5 +194,5 @@ int main() {
 
     } while (choice != 4);
 
-    return 0;
+    
 }
